@@ -24,13 +24,18 @@ num = st.number_input(
     step=1
 )
 
+st.caption("You can generate up to 30 questions per topic.")
+
 if st.button("Generate Quiz"):
     quiz = generate_quiz(topic, int(num))
+
+    st.write(f"Questions requested: {int(num)}")
+    st.write(f"Questions generated: {len(quiz)}")
 
     if quiz:
         st.subheader("Generated Quiz")
 
-        for i, q in enumerate(quiz, 1):
+        for i, q in enumerate(quiz, start=1):
             st.markdown(f"**Q{i}. {q['question']}**")
 
             for option in q["options"]:
@@ -44,9 +49,5 @@ if st.button("Generate Quiz"):
         st.success(
             f"Quiz generated successfully: {len(quiz)} questions!"
         )
-
     else:
-        st.warning(
-            "No questions available for this topic. "
-            "Please check your question bank."
-        )
+        st.warning("No questions available for this topic.")
