@@ -3,57 +3,106 @@ import random
 def generate_quiz(topic, num):
     sample_questions = {
         "Python": [
-            {
-                "question": "What is the keyword used to define a function in Python?",
-                "options": ["func", "define", "def", "function"],
-                "answer": "def"
-            },
-            {
-                "question": "Which data type stores True or False values?",
-                "options": ["int", "bool", "float", "str"],
-                "answer": "bool"
-            },
-            {
-                "question": "Which symbol is used for comments in Python?",
-                "options": ["//", "#", "/*", "--"],
-                "answer": "#"
-            }
+            {"question": "Which keyword defines a function?", "options": ["func", "def", "function", "define"], "answer": "def"},
+            {"question": "Which data type stores True or False?", "options": ["int", "str", "bool", "list"], "answer": "bool"},
+            {"question": "Which symbol starts a comment?", "options": ["//", "#", "/*", "--"], "answer": "#"},
+            {"question": "Which function displays output?", "options": ["input()", "print()", "show()", "display()"], "answer": "print()"},
+            {"question": "Which keyword creates a class?", "options": ["object", "struct", "class", "define"], "answer": "class"},
+            {"question": "Which collection is ordered and changeable?", "options": ["tuple", "list", "frozenset", "str"], "answer": "list"},
+            {"question": "Which brackets create a list?", "options": ["()", "{}", "[]", "<>"], "answer": "[]"},
+            {"question": "Which method adds an item to a list?", "options": ["add()", "append()", "insertEnd()", "pushBack()"], "answer": "append()"},
+            {"question": "Which keyword starts a conditional?", "options": ["when", "if", "check", "case"], "answer": "if"},
+            {"question": "Which loop iterates over a sequence?", "options": ["for", "repeat", "loop", "iterate"], "answer": "for"},
+            {"question": "Which operator performs exponentiation?", "options": ["^", "**", "//", "%"], "answer": "**"},
+            {"question": "What is the result of 10 // 3?", "options": ["3", "3.33", "1", "0"], "answer": "3"},
+            {"question": "Which function returns the length of a sequence?", "options": ["size()", "count()", "len()", "length()"], "answer": "len()"},
+            {"question": "Which keyword returns a value from a function?", "options": ["yield", "return", "send", "break"], "answer": "return"},
+            {"question": "Which data type is immutable?", "options": ["list", "dict", "set", "tuple"], "answer": "tuple"},
+            {"question": "Which keyword handles exceptions?", "options": ["try", "check", "catch", "error"], "answer": "try"},
+            {"question": "Which block handles an exception?", "options": ["except", "error", "finally", "raise"], "answer": "except"},
+            {"question": "Which function converts text to an integer?", "options": ["str()", "float()", "int()", "bool()"], "answer": "int()"},
+            {"question": "Which keyword imports a module?", "options": ["include", "using", "import", "require"], "answer": "import"},
+            {"question": "Which value represents no value?", "options": ["None", "Null", "void", "empty"], "answer": "None"},
+            {"question": "Which operator checks equality?", "options": ["=", "==", "!=", ":="], "answer": "=="},
+            {"question": "Which method converts text to lowercase?", "options": ["lower()", "small()", "down()", "tolower()"], "answer": "lower()"},
+            {"question": "Which keyword skips the current loop iteration?", "options": ["break", "pass", "continue", "skip"], "answer": "continue"},
+            {"question": "Which keyword exits a loop?", "options": ["stop", "break", "exitloop", "end"], "answer": "break"},
+            {"question": "Which collection stores key-value pairs?", "options": ["list", "tuple", "dictionary", "string"], "answer": "dictionary"},
+            {"question": "Which method gets a dictionary value by key?", "options": ["fetch()", "get()", "value()", "find()"], "answer": "get()"},
+            {"question": "Which built-in function creates a sequence of numbers?", "options": ["numbers()", "range()", "sequence()", "series()"], "answer": "range()"},
+            {"question": "What is the result of len('Python')?", "options": ["5", "6", "7", "8"], "answer": "6"},
+            {"question": "Which keyword creates an anonymous function?", "options": ["lambda", "anonymous", "func", "inline"], "answer": "lambda"},
+            {"question": "Which file mode is used to read a file?", "options": ["w", "a", "r", "x"], "answer": "r"},
         ],
+
         "Java": [
-            {
-                "question": "Who developed Java?",
-                "options": ["Microsoft", "Sun Microsystems", "Google", "Apple"],
-                "answer": "Sun Microsystems"
-            },
-            {
-                "question": "Which keyword creates an object?",
-                "options": ["create", "new", "object", "class"],
-                "answer": "new"
-            }
+            {"question": "Who originally developed Java?", "options": ["Microsoft", "Sun Microsystems", "Apple", "IBM"], "answer": "Sun Microsystems"},
+            {"question": "Which method is the usual Java program entry point?", "options": ["start()", "run()", "main()", "init()"], "answer": "main()"},
+            {"question": "Which keyword creates an object?", "options": ["class", "new", "this", "create"], "answer": "new"},
+            {"question": "Which keyword declares a class?", "options": ["class", "define", "object", "struct"], "answer": "class"},
+            {"question": "Which type stores whole numbers?", "options": ["boolean", "int", "char", "String"], "answer": "int"},
+            {"question": "Which type stores true or false?", "options": ["bool", "boolean", "bit", "logical"], "answer": "boolean"},
+            {"question": "Which type stores a single character?", "options": ["String", "char", "text", "CharacterArray"], "answer": "char"},
+            {"question": "Which keyword inherits a class?", "options": ["implements", "extends", "inherits", "super"], "answer": "extends"},
+            {"question": "Which keyword implements an interface?", "options": ["extends", "interface", "implements", "inherits"], "answer": "implements"},
+            {"question": "Which keyword refers to the current object?", "options": ["self", "current", "this", "super"], "answer": "this"},
+            {"question": "Which keyword refers to a parent-class member?", "options": ["parent", "base", "super", "this"], "answer": "super"},
+            {"question": "Which package is automatically imported?", "options": ["java.util", "java.io", "java.lang", "java.net"], "answer": "java.lang"},
+            {"question": "Which keyword prevents class inheritance?", "options": ["static", "final", "private", "constant"], "answer": "final"},
+            {"question": "Which keyword declares a method belonging to the class?", "options": ["static", "public", "final", "void"], "answer": "static"},
+            {"question": "Which access modifier allows access from any class?", "options": ["private", "protected", "public", "default"], "answer": "public"},
+            {"question": "Which keyword handles exceptions?", "options": ["try", "check", "test", "handle"], "answer": "try"},
+            {"question": "Which block catches exceptions?", "options": ["catch", "except", "error", "rescue"], "answer": "catch"},
+            {"question": "Which keyword explicitly throws an exception?", "options": ["throws", "throw", "exception", "raise"], "answer": "throw"},
+            {"question": "Which keyword declares that a method may pass exceptions to its caller?", "options": ["throw", "throws", "catch", "finally"], "answer": "throws"},
+            {"question": "Which collection commonly stores unique elements?", "options": ["List", "Set", "ArrayList", "Queue"], "answer": "Set"},
+            {"question": "Which collection stores key-value pairs?", "options": ["Map", "List", "Set", "Stack"], "answer": "Map"},
+            {"question": "Which keyword creates a subclass relationship?", "options": ["extends", "imports", "package", "static"], "answer": "extends"},
+            {"question": "Which operator tests equality of primitive values?", "options": ["=", "==", "===", "equals="], "answer": "=="},
+            {"question": "Which method compares String contents?", "options": ["compare()", "equals()", "same()", "matchValue()"], "answer": "equals()"},
+            {"question": "Which loop executes while a condition is true?", "options": ["if", "while", "switch", "case"], "answer": "while"},
+            {"question": "Which keyword exits a loop?", "options": ["stop", "break", "returnloop", "close"], "answer": "break"},
+            {"question": "Which keyword skips to the next loop iteration?", "options": ["skip", "pass", "continue", "next"], "answer": "continue"},
+            {"question": "Which keyword defines a constant-like variable?", "options": ["const", "final", "fixed", "constant"], "answer": "final"},
+            {"question": "Which tool compiles Java source code?", "options": ["java", "javac", "javadoc", "jar"], "answer": "javac"},
+            {"question": "What is the usual Java source file extension?", "options": [".class", ".java", ".jar", ".js"], "answer": ".java"},
         ],
+
         "AI": [
-            {
-                "question": "AI stands for?",
-                "options": ["Artificial Intelligence", "Automatic Internet", "Advanced Interface", "Applied Information"],
-                "answer": "Artificial Intelligence"
-            },
-            {
-                "question": "Which language is popular for AI?",
-                "options": ["Python", "HTML", "CSS", "PHP"],
-                "answer": "Python"
-            }
-        ]
+            {"question": "What does AI stand for?", "options": ["Automated Internet", "Artificial Intelligence", "Advanced Interface", "Applied Information"], "answer": "Artificial Intelligence"},
+            {"question": "Which is a common goal of AI?", "options": ["Simulating intelligent tasks", "Replacing electricity", "Making hardware unnecessary", "Removing all data"], "answer": "Simulating intelligent tasks"},
+            {"question": "What is machine learning?", "options": ["Learning patterns from data", "Only writing HTML", "Repairing hardware", "Compressing every file"], "answer": "Learning patterns from data"},
+            {"question": "What is supervised learning trained with?", "options": ["Labeled examples", "No data", "Only random numbers", "Unlabeled examples only"], "answer": "Labeled examples"},
+            {"question": "What is unsupervised learning commonly used for?", "options": ["Finding patterns in unlabeled data", "Using only labeled answers", "Compiling code", "Designing circuits"], "answer": "Finding patterns in unlabeled data"},
+            {"question": "What is reinforcement learning based on?", "options": ["Rewards and penalties", "Only labeled images", "Manual sorting", "Fixed database queries"], "answer": "Rewards and penalties"},
+            {"question": "What is a neural network inspired by?", "options": ["Biological nervous systems", "Road networks only", "File systems", "Computer keyboards"], "answer": "Biological nervous systems"},
+            {"question": "What is deep learning?", "options": ["Machine learning using multi-layer neural networks", "A database backup method", "A programming language", "A computer cable type"], "answer": "Machine learning using multi-layer neural networks"},
+            {"question": "Which AI field works with human language?", "options": ["NLP", "CAD", "DNS", "USB"], "answer": "NLP"},
+            {"question": "What does NLP stand for?", "options": ["Natural Language Processing", "Network Logic Program", "Numerical Learning Process", "New Language Protocol"], "answer": "Natural Language Processing"},
+            {"question": "Which AI field analyzes images?", "options": ["Computer vision", "Word processing", "Audio mixing", "File encryption"], "answer": "Computer vision"},
+            {"question": "What is a chatbot designed to do?", "options": ["Interact through conversation", "Cool a processor", "Format hard drives", "Route electricity"], "answer": "Interact through conversation"},
+            {"question": "What is a dataset?", "options": ["A collection of data", "A computer monitor", "A programming operator", "A network cable"], "answer": "A collection of data"},
+            {"question": "What is a model in machine learning?", "options": ["A system learned from data", "A physical keyboard", "A spreadsheet format only", "A computer fan"], "answer": "A system learned from data"},
+            {"question": "Why is training data used?", "options": ["To help a model learn patterns", "To increase screen brightness", "To replace an operating system", "To print documents"], "answer": "To help a model learn patterns"},
+            {"question": "What is classification in machine learning?", "options": ["Predicting categories", "Predicting only continuous numbers", "Deleting data", "Sorting computer files manually"], "answer": "Predicting categories"},
+            {"question": "What is regression commonly used to predict?", "options": ["Continuous numerical values", "Only image labels", "Passwords", "File extensions"], "answer": "Continuous numerical values"},
+            {"question": "What is clustering?", "options": ["Grouping similar data points", "Encrypting a message", "Writing source code", "Installing software"], "answer": "Grouping similar data points"},
+            {"question": "What is an algorithm?", "options": ["A sequence of steps to solve a problem", "A type of monitor", "A storage device", "A network connector"], "answer": "A sequence of steps to solve a problem"},
+            {"question": "What is overfitting?", "options": ["Learning training data too specifically", "Failing to load a file", "Using no training data", "Making a screen larger"], "answer": "Learning training data too specifically"},
+            {"question": "What is a common purpose of test data?", "options": ["Evaluating a trained model", "Training the model exclusively", "Deleting incorrect labels", "Writing program comments"], "answer": "Evaluating a trained model"},
+            {"question": "What is generative AI designed to do?", "options": ["Create new content", "Only store files", "Only sort numbers", "Repair physical devices"], "answer": "Create new content"},
+            {"question": "Which is an example of generative AI output?", "options": ["A newly generated story", "A disconnected cable", "A keyboard switch", "A printed circuit board"], "answer": "A newly generated story"},
+            {"question": "What is a prompt in generative AI?", "options": ["An instruction or input to the model", "A computer battery", "A network address", "A file compression method"], "answer": "An instruction or input to the model"},
+            {"question": "What is a large language model trained to process?", "options": ["Language and text patterns", "Only electrical signals", "Only computer graphics cards", "Only network cables"], "answer": "Language and text patterns"},
+            {"question": "What is an AI hallucination?", "options": ["Generated information that is false or unsupported", "A hardware upgrade", "A verified database backup", "A faster internet connection"], "answer": "Generated information that is false or unsupported"},
+            {"question": "Why should AI outputs be checked?", "options": ["They can contain mistakes or bias", "They are always correct", "They never use data", "They cannot generate text"], "answer": "They can contain mistakes or bias"},
+            {"question": "What does AI bias mean?", "options": ["Systematic unfairness in results", "A computer screen setting", "A faster processor", "A file naming rule"], "answer": "Systematic unfairness in results"},
+            {"question": "What is a training label?", "options": ["The expected answer attached to an example", "A model's brand name", "A computer username", "A file extension"], "answer": "The expected answer attached to an example"},
+            {"question": "What is one responsible AI practice?", "options": ["Protecting personal data", "Sharing private data without permission", "Ignoring all errors", "Using biased data without review"], "answer": "Protecting personal data"},
+        ],
     }
 
-    if topic in sample_questions:
-        questions = sample_questions[topic]
-    else:
-        questions = [
-            {
-                "question": f"What do you know about {topic}?",
-                "options": ["Option A", "Option B", "Option C", "Option D"],
-                "answer": "Option A"
-            }
-        ]
+    topic = topic.strip().title()
+    questions = sample_questions.get(topic, [])
 
-    return random.sample(questions, min(num, len(questions)))
+    return random.sample(questions, min(int(num), len(questions)))
